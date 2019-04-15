@@ -1,0 +1,142 @@
+p, span,  a, h1, h2, h3, h4, h5, h6, body, html {
+    font-family: 'Montserrat', sans-serif;
+}
+.offer-text {
+    color: forestgreen;
+}
+.suitcase {
+    width: 20%;
+    float: left;
+}
+.button {
+    background: gold;
+    color: black;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: normal;
+    margin-left: 15px;
+}
+.suitcase-wrap {
+    width: 70%;
+    float: left;
+}
+.suitcase .inner {
+    padding: 20px;
+    text-align: center;
+    border: 1px solid black;
+    font-size: 24px;
+    font-weight: bold;
+}
+.is-my-case {
+    background: forestgreen;
+    color: white;
+}
+.board-wrap {
+    width: 30%;
+    float: left;
+}
+.board-wrap .inner {
+    width: 50%;
+    float: left;
+}
+.board-wrap .inner .amount {
+    padding: 10px;
+    border: 1px solid black;
+}
+.board-wrap .inner .is-selected {
+    padding: 10px;
+    border: 1px solid black;
+    background: black;
+}
+.suit-wrap-inner {
+    padding: 0 20px;
+}
+.board-wrap-inner {
+    padding: 0 20px;
+}
+.offer-wrap {
+    padding: 0 20px;
+    overflow: auto;
+}
+.offer-accept-cover {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: white;
+}
+.button-done {
+    color: white;
+    background: orange;
+    margin: 0 auto;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 20px;
+    font-weight: bold;
+
+}
+/* .flex-item {
+    padding: 5px;
+    width: 20px;
+    height: 20px;
+    margin: 10px;
+    line-height: 20px;
+    color: white;
+    font-weight: bold;
+    font-size: 2em;
+    text-align: center;
+} */
+@media all and (max-width: 900px) {
+    .suitcase {
+        width: 33.3%;
+    }
+    .suitcase-wrap {
+        width: 100%;
+    }
+    .suitcase .inner {
+        padding: 10px;
+        text-align: center;
+        border: 1px solid black;
+        font-size: 14px;
+        font-weight: bold;
+    }
+    .is-my-case {
+        background: forestgreen;
+        color: white;
+    }
+    .board-wrap {
+        width: 100%;
+        margin-top: 20px;
+    }
+    .board-wrap .inner {
+        width: 50%;
+        float: left;
+    }
+    .board-wrap .inner .amount {
+        padding: 5px;
+        border: 1px solid black;
+    }
+    .suit-wrap-inner {
+        padding: 0 10px;
+    }
+    .board-wrap-inner {
+        padding: 0 10px;
+    }
+    .offer-wrap {
+        padding: 0 10px;
+        margin-top: 20px;
+        overflow: auto;
+    }
+}

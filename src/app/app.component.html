@@ -1,0 +1,96 @@
+<div class="suitcase-wrap">
+  <div class="suit-wrap-inner">
+    <h2>
+      Bankers Offer: 
+      <span class="offer-text" *ngIf="showBankerOffer" [@myAnimation]>{{bankerOffer | currency}}</span>
+      <span *ngIf="showBankerOffer" class="button" (click)="acceptOffer()">Accept Offer</span>
+    </h2>
+    <div *ngFor="let i of available; let index = index" class="suitcase">
+      <div class="inner" (click)="chooseMyCase(index)" [ngClass]="{'is-my-case': i.isMyCase }">
+        <!-- {{i.amount | currency}} -->
+        <!-- <strong>{{i.shown}}</strong> -->
+        <span *ngIf="i.shown === i.amount" [@myAnimation]>{{i.amount | currency}}</span>
+        <span *ngIf="i.shown === i.number" [@myAnimation]>{{i.number}}</span>
+        <!-- <strong>{{i.number}}</strong>
+        <br>
+        <span>{{i.amount | currency}}</span>
+        <br>
+        <span>{{i.adjustedValue | currency}}</span> -->
+        <!-- <em style="float: right">{{i.amount | currency}}</em> -->
+      </div>
+    </div>
+  </div>
+</div>
+<div class="board-wrap">
+  <div class="board-wrap-inner">
+    <h2>Open Amounts:</h2>
+    <div class="inner">
+      <div class="amount"  [ngClass]="{'is-selected': selectedAmounts.indexOf(0.01) > -1 }"><span>$0.01</span></div>
+  
+      <div class="amount"  [ngClass]="{'is-selected': selectedAmounts.indexOf(1) > -1 }"><span>$1</span></div>
+  
+      <div class="amount"  [ngClass]="{'is-selected': selectedAmounts.indexOf(5) > -1 }"><span>$5</span></div>
+  
+      <div class="amount"  [ngClass]="{'is-selected': selectedAmounts.indexOf(10) > -1 }"><span>$10</span></div>
+  
+      <div class="amount"  [ngClass]="{'is-selected': selectedAmounts.indexOf(25) > -1 }"><span>$25</span></div>
+  
+      <div class="amount"  [ngClass]="{'is-selected': selectedAmounts.indexOf(50) > -1 }"><span>$50</span></div>
+  
+      <div class="amount"  [ngClass]="{'is-selected': selectedAmounts.indexOf(75) > -1 }"><span>$75</span></div>
+  
+      <div class="amount"  [ngClass]="{'is-selected': selectedAmounts.indexOf(100) > -1 }"><span>$100</span></div>
+  
+      <div class="amount"  [ngClass]="{'is-selected': selectedAmounts.indexOf(200) > -1 }"><span>$200</span></div>
+  
+      <div class="amount"  [ngClass]="{'is-selected': selectedAmounts.indexOf(300) > -1 }"><span>$300</span></div>
+  
+      <div class="amount"  [ngClass]="{'is-selected': selectedAmounts.indexOf(400) > -1 }"><span>$400</span></div>
+  
+      <div class="amount"  [ngClass]="{'is-selected': selectedAmounts.indexOf(500) > -1 }"><span>$500</span></div>
+  
+      <div class="amount"  [ngClass]="{'is-selected': selectedAmounts.indexOf(750) > -1 }"><span>$750</span></div>
+    </div>
+    <div class="inner">
+      <div class="amount"  [ngClass]="{'is-selected': selectedAmounts.indexOf(1000) > -1 }"><span>$1000</span></div>
+  
+        <div class="amount"  [ngClass]="{'is-selected': selectedAmounts.indexOf(5000) > -1 }"><span>$5000</span></div>
+  
+        <div class="amount"  [ngClass]="{'is-selected': selectedAmounts.indexOf(10000) > -1 }"><span>$10000</span></div>
+  
+        <div class="amount"  [ngClass]="{'is-selected': selectedAmounts.indexOf(25000) > -1 }"><span>$25000</span></div>
+  
+        <div class="amount"  [ngClass]="{'is-selected': selectedAmounts.indexOf(50000) > -1 }"><span>$50000</span></div>
+  
+        <div class="amount"  [ngClass]="{'is-selected': selectedAmounts.indexOf(75000) > -1 }"><span>$75000</span></div>
+  
+        <div class="amount"  [ngClass]="{'is-selected': selectedAmounts.indexOf(100000) > -1 }"><span>$100000</span></div>
+  
+        <div class="amount"  [ngClass]="{'is-selected': selectedAmounts.indexOf(200000) > -1 }"><span>$200000</span></div>
+  
+        <div class="amount"  [ngClass]="{'is-selected': selectedAmounts.indexOf(300000) > -1 }"><span>$300000</span></div>
+  
+        <div class="amount"  [ngClass]="{'is-selected': selectedAmounts.indexOf(400000) > -1 }"><span>$400000</span></div>
+  
+        <div class="amount"  [ngClass]="{'is-selected': selectedAmounts.indexOf(500000) > -1 }"><span>$500000</span></div>
+  
+        <div class="amount"  [ngClass]="{'is-selected': selectedAmounts.indexOf(750000) > -1 }"><span>$750000</span></div>
+  
+        <div class="amount"  [ngClass]="{'is-selected': selectedAmounts.indexOf(1000000) > -1 }"><span>$1000000</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="offer-wrap">
+  <h2>Previous Offers:</h2>
+  <div *ngFor="let offer of bankersOfferArchive">
+    <h3>{{offer | currency}}</h3>
+  </div>
+</div>
+
+<div class="offer-accept-cover" *ngIf="offerAccepted">
+    <h1>CONGRATULATIONS!</h1>
+    <h2>You've Won {{bankerOffer | currency}}</h2>
+    <span class="button-done" (click)="keepPlaying()">See What Would Have Happened</span>
+    <span class="button-done" (click)="playAgain()">Play Again</span>
+</div>
